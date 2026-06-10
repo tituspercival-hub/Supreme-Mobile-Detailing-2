@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Mobile Detailing LLC | Arizona's Premium Auto Presentation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           SUPREME MOBILE DETAILING DESIGN SYSTEM (AZ COBALT THEME)
+           ========================================================================== */
+        :root {
+            --bg-deep: #060709;
+            --bg-surface: #0e1116;
+            --bg-card: #151922;
+            --cobalt-blue: #0052ff;
+            --liquid-cyan: #00d9ff;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-glow: rgba(0, 82, 255, 0.2);
+            --font-display: 'Cabinet Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-body);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 40%, var(--liquid-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ==========================================================================
+           NAVIGATION HEADER BAR
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(6, 7, 9, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 1.25rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--liquid-cyan);
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: var(--transition);
+            opacity: 0.8;
+        }
+
+        .nav-menu a:hover {
+            color: var(--liquid-cyan);
+            opacity: 1;
+        }
+
+        .cta-nav-btn {
+            background: linear-gradient(135deg, var(--cobalt-blue), var(--liquid-cyan));
+            color: #fff !important;
+            padding: 0.65rem 1.4rem;
+            border-radius: 4px;
+            opacity: 1 !important;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 20px rgba(0, 82, 255, 0.3);
+        }
+
+        .cta-nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 217, 255, 0.5);
+        }
+
+        /* ==========================================================================
+           HERO IMPACT ZONE
+           ========================================================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: radial-gradient(circle at 85% 30%, rgba(0, 82, 255, 0.12) 0%, transparent 50%), 
+                        radial-gradient(circle at 15% 75%, rgba(0, 217, 255, 0.06) 0%, transparent 50%);
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .badge {
+            background: rgba(0, 219, 255, 0.08);
+            border: 1px solid rgba(0, 219, 255, 0.15);
+            color: var(--liquid-cyan);
+            padding: 0.4rem 1.1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4.8rem;
+            line-height: 1.05;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.2rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--cobalt-blue), var(--liquid-cyan));
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(0, 82, 255, 0.3);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 217, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--liquid-cyan);
+            background: rgba(0, 217, 255, 0.02);
+            color: var(--liquid-cyan);
+        }
+
+        /* Metrics Bar */
+        .trust-banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(14, 17, 22, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 1.75rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .trust-metric {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .trust-number {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--liquid-cyan);
+        }
+
+        .trust-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* ==========================================================================
+           SECTIONS REUSABLES
+           ========================================================================== */
+        section {
+            padding: 9rem 8%;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-intro h2 {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-intro p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        /* ==========================================================================
+           LIVE DYNAMIC PRICE CALCULATOR ENGINE
+           ========================================================================== */
+        .calculator-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            max-width: 950px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+        }
+
+        @media (max-width: 850px) {
+            .calculator-box { grid-template-columns: 1fr; }
+        }
+
+        .calc-interactive {
+            padding: 3.5rem;
+            background: rgba(21, 25, 34, 0.3);
+        }
+
+        .calc-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--liquid-cyan);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .calc-option {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 1.4rem 1rem;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .calc-option.active {
+            border-color: var(--cobalt-blue);
+            background: rgba(0, 82, 255, 0.08);
+            box-shadow: inset 0 0 15px rgba(0, 82, 255, 0.15);
+        }
+
+        .calc-option span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .calc-summary-panel {
+            padding: 3.5rem;
+            background: linear-gradient(135deg, #121620 0%, #080a0f 100%);
+            border-left: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .price-display {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 0.5rem 0;
+            line-height: 1;
+        }
+
+        /* ==========================================================================
+           FILTERABLE VISUAL PORTFOLIO MATRIX
+           ========================================================================== */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-muted);
+            padding: 0.6rem 1.6rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--liquid-cyan);
+            color: #060709;
+            border-color: var(--liquid-cyan);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.01);
+            transition: var(--transition);
+            display: none;
+        }
+
+        .portfolio-item.show {
+            display: block;
+            animation: filterReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.88);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            filter: brightness(1.02);
+            transform: scale(1.02);
+        }
+
+        .portfolio-meta {
+            padding: 1.4rem;
+        }
+
+        .portfolio-meta h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .portfolio-meta span {
+            font-size: 0.75rem;
+            color: var(--liquid-cyan);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================================================
+           VERIFIED CLIENT EXPERIENCES
+           ========================================================================== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 950px) {
+            .reviews-grid { grid-template-columns: 1fr; }
+        }
+
+        .review-card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.02);
+            padding: 2.5rem;
+            border-radius: 6px;
+        }
+
+        .stars {
+            color: #ffbc00;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-card p {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1.75rem;
+            font-size: 0.98rem;
+        }
+
+        .review-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1c222f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--liquid-cyan);
+            border: 1px solid var(--border-glow);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           CONCIERGE SCHEDULING FORM
+           ========================================================================== */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            padding: 4.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 600px) {
+            .contact-container { padding: 2.5rem 1.5rem; }
+        }
+
+        .input-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .input-row { flex-direction: column; gap: 1.5rem; }
+        }
+
+        .field-group {
+            flex: 1;
+        }
+
+        .field-group label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .field-group input, .field-group textarea {
+            width: 100%;
+            background: var(--bg-deep);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 1.1rem;
+            color: #fff;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .field-group input:focus, .field-group textarea:focus {
+            border-color: var(--liquid-cyan);
+            box-shadow: 0 0 15px rgba(0,217,255,0.1);
+        }
+
+        /* ==========================================================================
+           FAQ ACCORDIONS
+           ========================================================================== */
+        .faq-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.02);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            padding: 1.6rem 2rem;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--liquid-cyan);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-trigger::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            color: var(--text-muted);
+            padding: 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-content {
+            padding-bottom: 1.6rem;
+        }
+
+        /* ==========================================================================
+           FOOTER ARCHITECTURE
+           ========================================================================== */
+        footer {
+            background: #040507;
+            padding: 6rem 8% 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr repeat(2, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 750px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--liquid-cyan);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @keyframes filterReveal {
+            from { opacity: 0; transform: scale(0.96) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-block">
+            <span class="logo-main">SUPREME</span>
+            <span class="logo-sub">Mobile Detailing LLC</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#services">Pricing Engine</a></li>
+            <li><a href="#work">Showroom</a></li>
+            <li><a href="#reviews">Ledger</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#connect" class="cta-nav-btn">Instant Booking</a></li>
+        </ul>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">Arizona Elite On-Site Restoration</span>
+            <h1>Supreme Automotive <br><span class="gradient-text">Preservation Framework</span></h1>
+            <p>Deploying specialized high-pressure self-powered containment systems directly to your coordinates. Delivering architectural paint correction, deep sterilization, and elite surface care across AZ.</p>
+            <div class="hero-actions">
+                <a href="#services" class="btn btn-primary">Run Price Engine</a>
+                <a href="#work" class="btn btn-secondary">Verify Proof of Work</a>
+            </div>
+        </div>
+        
+        <div class="trust-banner">
+            <div class="trust-metric">
+                <span class="trust-number">5.0★</span>
+                <span class="trust-label">Verified Premium<br>Client Score</span>
+            </div>
+            <div class="trust-metric">
+                <span class="trust-number">100%</span>
+                <span class="trust-label">Self-Powered Water<br>& Energy Supply</span>
+            </div>
+            <div class="trust-metric">
+                <span class="trust-number">LLC</span>
+                <span class="trust-label">Fully Registered<br>& Insured Operation</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: rgba(14, 17, 22, 0.4);">
+        <div class="section-intro">
+            <h2>Algorithmic Price Matrix</h2>
+            <p>Configure your asset properties down below to evaluate real-time transparent investment parameters instantly.</p>
+        </div>
+        
+        <div class="calculator-box">
+            <div class="calc-interactive">
+                <div class="calc-steps">
+                    <span class="calc-label">Step 1: Vehicle Dimensions Profile</span>
+                    <div class="calc-grid" id="typeGrid">
+                        <div class="calc-option active" data-cost="140"><span>Compact / Sedan</span></div>
+                        <div class="calc-option" data-cost="165"><span>Midsize SUV / Crossover</span></div>
+                        <div class="calc-option" data-cost="195"><span>Full-Size Truck / Van</span></div>
+                    </div>
+                </div>
+                
+                <div class="calc-steps">
+                    <span class="calc-label">Step 2: Treatment Scope Tier</span>
+                    <div class="calc-grid" id="packageGrid">
+                        <div class="calc-option active" data-multiplier="1.0"><span>Supreme Refresh</span></div>
+                        <div class="calc-option" data-multiplier="1.35"><span>Full Deep Detail</span></div>
+                        <div class="calc-option" data-multiplier="2.2"><span>Ceramic Preservation</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calc-summary-panel">
+                <span class="calc-label" style="color:#fff;">Estimated Investment</span>
+                <div class="price-display">$<span id="priceValue">140</span></div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom: 2rem;">*Verified upon physical deployment inspection</p>
+                <a href="#connect" class="btn btn-primary" style="width: 100%; text-align:center;">Lock Immediate Slot</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="section-intro">
+            <h2>The Showroom Ledger</h2>
+            <p>Zero filters. Clear evidence of pristine structural detailing executions completed within the state of Arizona.</p>
+        </div>
+        
+        <div class="portfolio-tabs">
+            <button class="tab-btn active" onclick="filterPortfolio('all')">All Executions</button>
+            <button class="tab-btn" onclick="filterPortfolio('exotic')">Exotics & Sports</button>
+            <button class="tab-btn" onclick="filterPortfolio('interior')">Interior Restorations</button>
+            <button class="tab-btn" onclick="filterPortfolio('fleet')">Trucks & SUVs</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item exotic show">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="portfolio-meta">
+                    <span>Exotics & Sports</span>
+                    <h4>Multi-Stage Paint Preservation</h4>
+                </div>
+            </div>
+            <div class="portfolio-item interior show">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="portfolio-meta">
+                    <span>Interior Restorations</span>
+                    <h4>Deep Disinfection & Leather Cure</h4>
+                </div>
+            </div>
+            <div class="portfolio-item fleet show">
+                <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="portfolio-meta">
+                    <span>Trucks & SUVs</span>
+                    <h4>Hydro-Ceramic Sealant Treatment</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" style="background: rgba(14, 17, 22, 0.4);">
+        <div class="section-intro">
+            <h2>Verified Client Reports</h2>
+            <p>Evaluating real client consensus metrics pulled from active local Arizona vehicle owners.</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Supreme attention to detail. My vehicle looks better than the day I bought it from the showroom floors. Jorge is extremely professional and polite!"</p>
+                <div class="review-user">
+                    <div class="user-avatar">AM</div>
+                    <div>
+                        <h5 style="font-weight:700;">Andrew Miller</h5>
+                        <span style="font-size:0.8rem; color:var(--text-muted);">Verified Owner</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"The pure convenience of having them roll out right into my office space while I worked was spectacular. Absolute top-shelf execution."</p>
+                <div class="review-user">
+                    <div class="user-avatar">SH</div>
+                    <div>
+                        <h5 style="font-weight:700;">Sarah Hendricks</h5>
+                        <span style="font-size:0.8rem; color:var(--text-muted);">Verified Enterprise User</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"They tackled deep pet hair contamination in my interior seats with zero issues. Looks incredibly immaculate inside and smells fantastic."</p>
+                <div class="review-user">
+                    <div class="user-avatar">DB</div>
+                    <div>
+                        <h5 style="font-weight:700;">Devon Brooks</h5>
+                        <span style="font-size:0.8rem; color:var(--text-muted);">Verified Truck Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="section-intro">
+            <h2>Fulfillment FAQ</h2>
+            <p>Clear, direct answers regarding our specialized detailing procedures and service footprint.</p>
+        </div>
+        
+        <div class="faq-wrapper">
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">What specific equipment dependencies do you have?</button>
+                <div class="faq-content">
+                    <p>None. Supreme Mobile Detailing operates custom rigs completely built out with dedicated pristine water holding reserves and independent generator nodes. We require zero hookups to your house or business infrastructure.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">How long do premium multi-stage detail treatments take?</button>
+                <div class="faq-content">
+                    <p>Standard preservation loops run between 2 to 3.5 hours depending on size profiles, while comprehensive compound paint corrections or full multi-point ceramic coatings require 4 to 6 hours for pristine calibration.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-trigger" onclick="toggleFaq(this)">What geographic regions are covered under your footprint?</button>
+                <div class="faq-content">
+                    <p>We actively service Phoenix and the entire surrounding Valley locations including Scottsdale, Gilbert, Mesa, Chandler, and Glendale with no travel premiums applied.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect" style="background: linear-gradient(180deg, transparent, #090b0f);">
+        <div class="section-intro" style="margin-bottom:3.5rem;">
+            <h2>Secure Priority Dispatch</h2>
+            <p>Submit your operational parameters below. Our dispatch node will contact you within 15 minutes to confirm booking slots.</p>
+        </div>
+        
+        <div class="contact-container">
+            <form onsubmit="alert('Operational data transmitted to scheduling dispatch. An agent will text or call your line under 15 minutes.'); return false;">
+                <div class="input-row">
+                    <div class="field-group">
+                        <label>Your Full Name</label>
+                        <input type="text" required placeholder="Alexander Vance">
+                    </div>
+                    <div class="field-group">
+                        <label>Contact Phone Number</label>
+                        <input type="tel" required placeholder="(602) 555-0144">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="field-group">
+                        <label>Target Zip Code / City</label>
+                        <input type="text" required placeholder="e.g., Scottsdale, AZ">
+                    </div>
+                    <div class="field-group">
+                        <label>Vehicle Configuration</label>
+                        <input type="text" required placeholder="e.g., Porsche 911 GT3">
+                    </div>
+                </div>
+                <div class="field-group" style="margin-bottom:2.5rem;">
+                    <label>Specific Vehicle Context / Requests</label>
+                    <textarea rows="4" placeholder="Detail any hard water spotting, deep interior leather restoration requirements, or custom needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Initiate Request Loop</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="logo-block" style="margin-bottom:1.5rem;">
+                    <span class="logo-main">SUPREME</span>
+                    <span class="logo-sub">Mobile Detailing LLC</span>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.9rem; max-width:320px;">Delivering high-end mobile automotive care and premier aesthetic preservation layers directly to your location across Arizona.</p>
+            </div>
+            <div>
+                <h4>Navigation Map</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Investment Engine</a></li>
+                    <li><a href="#work">Showroom Matrix</a></li>
+                    <li><a href="#reviews">Client Consensus</a></li>
+                    <li><a href="#faq">Fulfillment FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Digital Concierge Hub</h4>
+                <ul class="footer-links">
+                    <li><a href="https://tr.ee/_rCGSRzgni" target="_blank" rel="noopener">Linktree Premium Node</a></li>
+                    <li><a href="https://tr.ee/1s-AE1_NYo" target="_blank" rel="noopener">Linktree Executive Layer</a></li>
+                    <li><a href="https://tr.ee/umZlT-ECbD" target="_blank" rel="noopener">Linktree Strategic Link</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>&copy; 2026 Supreme Mobile Detailing LLC. All Rights Reserved. AZ Preservation Core.</div>
+            <div style="color:var(--liquid-cyan);">High-Conversion Conversion Core</div>
+        </div>
+    </footer>
+
+    <script>
+        // LIVE MATRIX PRICING LOOPS
+        const typeGrid = document.getElementById('typeGrid');
+        const packageGrid = document.getElementById('packageGrid');
+        const priceValue = document.getElementById('priceValue');
+
+        function recomputePrice() {
+            const currentType = typeGrid.querySelector('.calc-option.active');
+            const currentPackage = packageGrid.querySelector('.calc-option.active');
+            
+            if (currentType && currentPackage) {
+                const base = parseFloat(currentType.getAttribute('data-cost'));
+                const multi = parseFloat(currentPackage.getAttribute('data-multiplier'));
+                priceValue.textContent = Math.round(base * multi);
+            }
+        }
+
+        [typeGrid, packageGrid].forEach(grid => {
+            grid.addEventListener('click', (e) => {
+                const targetNode = e.target.closest('.calc-option');
+                if (!targetNode) return;
+                
+                grid.querySelectorAll('.calc-option').forEach(node => node.classList.remove('active'));
+                targetNode.classList.add('active');
+                recomputePrice();
+            });
+        });
+
+        // LIVE PORTFOLIO FILTER SYSTEM
+        function filterPortfolio(category) {
+            const entries = document.querySelectorAll('.portfolio-item');
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => {
+                if (tab.innerText.toLowerCase().includes(category) || (category === 'all' && tab.innerText.toLowerCase().includes('all'))) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            entries.forEach(entry => {
+                if (category === 'all' || entry.classList.contains(category)) {
+                    entry.classList.add('show');
+                } else {
+                    entry.classList.remove('show');
+                }
+            });
+        }
+
+        // ACCORDION CONTROL FLOW
+        function toggleFaq(trigger) {
+            const targetItem = trigger.parentElement;
+            const textPanel = targetItem.querySelector('.faq-content');
+            
+            if (targetItem.classList.contains('active')) {
+                targetItem.classList.remove('active');
+                textPanel.style.maxHeight = '0px';
+            } else {
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-content').style.maxHeight = '0px';
+                });
+                
+                targetItem.classList.add('active');
+                textPanel.style.maxHeight = textPanel.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
